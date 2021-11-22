@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hibernate Search With Spring Boot</title>
+
+    <link href="/index.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Search</h1>
+<div>
+    <form action="#" th:action="@{/}" th:object="${search}">
+        <input class="formStyle" name="search" id="search"
+               placeholder="Keywords" />
+        <div th:if="${not #lists.isEmpty(search)}">
+            <table>
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="search : ${search}">
+                    <td th:text="${search.id}">Text ...</td>
+                    <td th:text="${search.firstName}">Text ...</td>
+                    <td th:text="${search.lastName}">Text ...</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+</body>
+</html>
