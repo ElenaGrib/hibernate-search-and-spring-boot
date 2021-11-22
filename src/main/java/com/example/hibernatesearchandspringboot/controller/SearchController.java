@@ -21,7 +21,6 @@ public class SearchController {
             searchResults = repository.search(q);
 
         } catch (Exception ex) {
-            // Nothing
         }
         model.addAttribute("search", searchResults);
         return "index";
